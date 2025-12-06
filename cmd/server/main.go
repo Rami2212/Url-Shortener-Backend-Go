@@ -3,7 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/gofiber/fiber/v2" // <-- add this
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/config"
@@ -25,6 +26,13 @@ func main() {
 
 	// Initialize Fiber app
 	app := fiber.New()
+
+	// Enable CORS
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*",
+		AllowHeaders: "Origin, Content-Type, Accept",
+		AllowMethods: "GET, POST, PUT, DELETE",
+	}))
 
 	// Register routes
 	routes.RegisterRoutes(app, postgres, cfg)

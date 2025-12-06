@@ -3,7 +3,7 @@ package routes
 import (
 	"gorm.io/gorm"
 
-	"github.com/gofiber/fiber/v2" // must stay
+	"github.com/gofiber/fiber/v2"
 
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/config"
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/handlers"
