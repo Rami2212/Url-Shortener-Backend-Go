@@ -10,7 +10,7 @@ import (
 func ConnectRedis(cfg *config.Config) *redis.Client {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     cfg.RedisAddr,
-		Password: cfg.RedisPassword,
+		Password: cfg.RedisPass,
 		DB:       0,
 	})
 

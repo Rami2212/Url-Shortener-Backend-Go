@@ -7,7 +7,7 @@ import (
 
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/config"
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/db"
-	"github.com/Rami2212/Url-Shortener-Backend-Go/routes"
+	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/routes"
 )
 
 func main() {
