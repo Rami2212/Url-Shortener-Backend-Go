@@ -5,7 +5,6 @@ import (
 	"errors"
 	"time"
 
-	"github.com/redis/go-redis/v9"
 	"gorm.io/gorm"
 
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/config"

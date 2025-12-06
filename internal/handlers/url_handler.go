@@ -3,8 +3,6 @@ package handlers
 import (
 	"net/url"
 
-	"github.com/gofiber/fiber/v2"
-
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/config"
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/services"
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/utils"
