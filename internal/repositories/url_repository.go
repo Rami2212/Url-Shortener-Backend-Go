@@ -20,18 +20,14 @@ func (r *URLRepository) Create(url *models.URL) error {
 
 func (r *URLRepository) FindByShortCode(code string) (*models.URL, error) {
 	var url models.URL
-	if err := r.db.Where("short_code = ?", code).First(&url).Error; err != nil {
-		return nil, err
-	}
-	return &url, nil
+	err := r.db.Where("short_code = ?", code).First(&url).Error
+	return &url, err
 }
 
 func (r *URLRepository) FindByOriginalURL(original string) (*models.URL, error) {
 	var url models.URL
-	if err := r.db.Where("original_url = ?", original).First(&url).Error; err != nil {
-		return nil, err
-	}
-	return &url, nil
+	err := r.db.Where("original_url = ?", original).First(&url).Error
+	return &url, err
 }
 
 func (r *URLRepository) IncrementVisits(id uint) error {

@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/gofiber/fiber/v2" // <-- add this
 	"github.com/joho/godotenv"
 
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/config"
@@ -26,9 +27,9 @@ func main() {
 	app := fiber.New()
 
 	// Register routes
-	routes.RegisterRoutes(app, postgres, redis, cfg)
+	routes.RegisterRoutes(app, postgres, cfg)
 
 	// Start server
 	log.Printf("Starting server on port %s...", cfg.AppPort)
-	app.listen(":" + cfg.AppPort)
+	app.Listen(":" + cfg.AppPort) // <-- capital L
 }
