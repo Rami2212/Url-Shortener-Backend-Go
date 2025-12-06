@@ -1,4 +1,4 @@
-module url-shortener-backend-go
+module github.com/Rami2212/Url-Shortener-Backend-Go
 
 go 1.25.5
 

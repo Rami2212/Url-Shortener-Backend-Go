@@ -5,8 +5,8 @@ import (
 
 	"github.com/joho/godotenv"
 
-	"github.com/Rami2212/Url-Shortener-Backend-Go/db"
 	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/config"
+	"github.com/Rami2212/Url-Shortener-Backend-Go/internal/db"
 	"github.com/Rami2212/Url-Shortener-Backend-Go/routes"
 )
 
