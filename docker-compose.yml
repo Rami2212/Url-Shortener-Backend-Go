@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      APP_PORT: 8080
+      BASE_SHORT_URL: "http://localhost:8080"
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: url_user
+      POSTGRES_PASSWORD: url_pass
+      POSTGRES_DB: url_shortener
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16
+    container_name: url_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: url_user
+      POSTGRES_PASSWORD: url_pass
+      POSTGRES_DB: url_shortener
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
